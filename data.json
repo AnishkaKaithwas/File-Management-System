@@ -5,6 +5,26 @@
         "phoneno": "9876543217",
         "email": "juli@gmail.com",
         "pin": "0987"
+    },
+    {
+        "name": "Helly John",
+        "age": 19,
+        "phoneno": "1236547899",
+        "email": "helly@123",
+        "pin": "1234"
+    },
+    {
+        "name": "marry ",
+        "age": 19,
+        "phoneno": "7894561233",
+        "email": "marry@123",
+        "pin": "1236"
+    },
+    {
+        "name": "john",
+        "age": 19,
+        "phoneno": "7894561233",
+        "email": "John@123",
+        "pin": "8520"
     }
-   
 ]

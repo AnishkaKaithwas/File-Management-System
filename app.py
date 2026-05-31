@@ -45,6 +45,9 @@ def save_users():
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
+if "user" not in st.session_state:
+    st.session_state.user = None
+
 # ---------------- Login / Register ----------------
 st.title("📁 File Management System")
 
@@ -61,6 +64,7 @@ if not st.session_state.logged_in:
                 st.session_state.logged_in = True
                 st.session_state.user = user
                 st.balloons()
+                st.rerun()
             else:
                 st.error("Invalid credentials")
 
@@ -113,7 +117,8 @@ else:
     elif menu == "List Files & Folders":
         st.subheader("📄 Files & Folders")
         for i, item in enumerate(base.rglob("*")):
-            st.write(f"{i+1}. {item}")
+            if ".git" not in str(item):
+                st.write(f"{i+1}. {item}")
 
     elif menu == "Rename Folder":
         old = st.text_input("Old Folder Name")
@@ -168,4 +173,5 @@ else:
 
     if st.sidebar.button("Logout"):
         st.session_state.logged_in = False
-        st.experimental_rerun()
+        st.session_state.user = None
+        st.rerun()
